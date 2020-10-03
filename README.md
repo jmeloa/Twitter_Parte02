@@ -2,6 +2,9 @@
 
 Parte 2:
 ========
+
+HEROKU NO FUNCIONA 100% SI EL GITHUB
+
 Historia 1:
 ===========
 Modificar la página principal para que, si el usuario ha iniciado sesión, se muestren
