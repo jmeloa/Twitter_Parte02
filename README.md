@@ -1,5 +1,47 @@
 # README
 
+Parte 2:
+========
+Historia 1:
+===========
+Modificar la página principal para que, si el usuario ha iniciado sesión, se muestren
+únicamente los tweets de las personas que sigue. --> OK
+
+Crear el scope tweets_for_me que recibirá una lista de ids de amigos del current_user y
+entregará todos los tweets relacionados a sus amigos. --->OK
+
+Se debe mantener la paginación de tweet en 50 por página.-->OK
+
+Historia 2
+==========
+Active Admin: No logrado 
+Logré hacer la página la cual se accede a través de 
+//admin
+User: admin@example.com
+Password: password
+
+se pueden ver los usuarios, pero los links de editar y eliminar NO funcionan ni tapmoco muestra la cantidad ni detalle.
+
+Historia 3
+==========
+Implementar un buscador que pueda buscar tweets, para esto se debe hacer una búsqueda
+parcial ya que el contenido puede ser solo parte de un tweet.  -->OK
+
+Historia 4
+==========
+No logrado
+
+
+
+
+
+
+
+
+
+Parte1:
+========
+
 VINCULO A HEROKU:
 =================
 https://young-anchorage-62980.herokuapp.com/
