@@ -3,7 +3,8 @@
 Parte 2:
 ========
 
-HEROKU NO FUNCIONA 100% SI EL GITHUB
+HEROKU NO FUNCIONA 
+GITHUB SI FUNCIONA
 
 Historia 1:
 ===========
@@ -32,7 +33,16 @@ parcial ya que el contenido puede ser solo parte de un tweet.  -->OK
 
 Historia 4
 ==========
-No logrado
+LOGRADO PARCIALMENTE
+Convertir el contenido del tweet en un array, donde el espacio entre palabra y palabra puede ser el elemento de separación. --> OK
+
+2) Iterar el array del contenido y revisar si en cada palabra existe un # ; si existe se crea el link
+con su correspondiente URL y texto, luego el link se retorna al mismo array; en el caso de
+que no exista el numeral ( # ) se retorna al array la palabra completa.  --> OK PERO NO FUNCIONA EL LINK
+
+3) Una vez que hemos revisado el array e insertado los links se vuelve a unir el array para convertirlo en un string. --> OK
+
+4) Ese string se lo retornamos nuevamente al contenido del tweet. --> OK
 
 
 

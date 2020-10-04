@@ -15,8 +15,6 @@
 
 <%= button_to 'Nuevo Tweet', new_tweet_path, method: 'get' %>
 
-
- 
 <%= will_paginate @tweets, previous_label: h("<"), next_label: h(">") %>
 <table class="table table-striped">
   <thead>
@@ -38,8 +36,18 @@
     <% @tweets.each do |tweet| %>
       <tr>
       
-        <th scope="row"><%=a + (5*(@tweets.current_page-1))%></th>
-        <td><%= truncate(tweet.post, :length =>80) %></td>
+        <th scope="row"><%= a + (5*(@tweets.current_page-1)) %> </th>
+        
+        <td><% tweet.post.to_s.split(' ').each do |word| %>
+          <% if word.start_with?('#') %>
+            <%= link_to word, tweets_path(word) %>
+          <% else %>
+            <%=word %>
+          <% end %>    
+        <% end %>  </td>
+         
+        
+        
         <td align="center"><%= image_tag(tweet.user.user_photo, style: "max-width: 50px; border-radius: 20px;") %></td>
         <td align="center"><%= time_ago_in_words(tweet.user.created_at) %></td>
         <td align="center"><%= tweet.likes.count%></td>

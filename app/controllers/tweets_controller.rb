@@ -4,7 +4,6 @@ class TweetsController < ApplicationController
   # GET /tweets
   # GET /tweets.json
   
-  
   def index
     
     friends = Friend.where("user_id=?" , current_user&.id)
@@ -19,6 +18,7 @@ class TweetsController < ApplicationController
       aux = Tweet.where(user_id: aux2)
       @tweets = aux.order("created_at DESC").page(params[:page]).per_page(5)
     end
+
   end
 
   # GET /tweets/1
@@ -39,8 +39,9 @@ class TweetsController < ApplicationController
   # POST /tweets
   # POST /tweets.json
   def create
+    
     @tweet = current_user.tweets.new(tweet_params)
-
+    
     respond_to do |format|
       if @tweet.save
         format.html { redirect_to @tweet, notice: 'Tweet was successfully created.' }
@@ -50,8 +51,17 @@ class TweetsController < ApplicationController
         format.json { render json: @tweet.errors, status: :unprocessable_entity }
       end
     end
+    extract_name_hash_tags.each do |name|
+      HashTag.create(name: name)
+    end
   end
 
+  def extract_name_hash_tags
+    @tweet.post.to_s.scan(/#\w+/).map{|name| name.gsub("#", "")}
+  end
+ 
+ 
+ 
   # PATCH/PUT /tweets/1
   # PATCH/PUT /tweets/1.json
   def update
@@ -76,6 +86,11 @@ class TweetsController < ApplicationController
     end
   end
 
+  
+  
+  
+  
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_tweet

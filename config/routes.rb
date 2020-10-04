@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
+  get 'search/index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :friends
   resources :likes
   resources :tweets   
   devise_for :users, controllers:{registrations: 'registrations'}
-  
+  get 'search' => 'search#index'
   root 'home#index'  
   resources :tweets do
     resources :likes
