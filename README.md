@@ -3,7 +3,9 @@
 Parte 2:
 ========
 
-HEROKU NO FUNCIONA 
+HEROKU NO FUNCIONA BIEN
+https://nameless-inlet-43183.herokuapp.com/
+
 GITHUB SI FUNCIONA
 
 Historia 1:
